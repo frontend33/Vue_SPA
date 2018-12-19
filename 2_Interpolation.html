@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<div id="app">
+	<div>Hello {{name}}</div>
+	<h1>Sum:{{10+60}}</h1>
+	<h1>Nummber:{{number}}</h1>
+	<h1>Nummber:{{sayHello()}}</h1>
+	<h1>If statment:{{isOk ? 'I am Ok' : 'I am not OK' }}</h1>
+	<h1>Functions:{{string.split('').reverse().join("")}}</h1>
+</div>
+
+
+
+<script>
+	new Vue({
+		el: `#app`,
+		data:{
+			name: `Vue`,
+			number: 100,
+			isOk: true,
+			string: "My name is George"
+		},
+		methods:{
+			sayHello:function(){
+				return "I am function"
+			}
+		}
+
+	})
+</script>
+</body>
+</html>
