@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<!-- Динамические стили-->
+	<div id="app">
+<!-- 		<ul>
+			<li v-for="(person,index) in people">{{index+1}} {{person}}</li>
+		</ul> -->
+
+		<ul>
+				<li v-for="(person,index) in people">{{index+1}} {{person.name}} - <b> {{person.age}} </li>
+		</ul>
+
+		<ol>
+			<li v-for="num of 4">{{num}}</li>
+		</ol>
+		<hr>
+
+		<ul>
+			<li v-for="(value,key,index) in person"> {{index+1}}  <b>{{key}}</b> {{value}}</li>
+		</ul>
+
+	</div>
+
+<script>
+	new Vue({
+		el: `#app`,
+		data:{
+			people:[
+				{name:"Vlad", age:20},
+				{name:"Max", age:25},
+				{name:"Elena", age:30}
+			],
+			person:{
+				name:'Max',
+				age: 70,
+				job:'frontend'
+			}
+		},
+	})
+
+
+	/*
+	new Vue({
+		el: `#app`,
+		data:{
+			people:[
+				'Vlad',
+				'Max',
+				'Elena',
+				'Frontend33'
+			]
+		},
+	})
+	*/
+</script>
+</body>
+</html>

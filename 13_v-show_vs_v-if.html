@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<!-- Динамические стили-->
+<div id="app">
+		
+<!-- 	<h2 v-if="isVisible">I am visible</h2>
+	<h2 v-else>No I am not</h2> -->
+
+	
+	<h2 v-show="isVisible">I am visible</h2>
+	<h2 v-show=!isVisible>No I am not</h2>
+	<hr>
+ <!-- Без флага переключения isVisible -->
+ <button @click="isVisible=!isVisible">Toggle</button>
+
+</div>
+
+<script>
+	new Vue({
+		el: `#app`,
+		data:{
+			isVisible:true,
+		},
+		computed:{
+		
+		},
+		methods:{
+
+		}
+	
+
+	})
+</script>
+</body>
+</html>

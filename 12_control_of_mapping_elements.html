@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<!-- Динамические стили-->
+<div id="app">
+		<!--
+	<h2 v-if="isVisible">I am visible</h2>
+	<h2 v-else>No I am not</h2>
+ //Без флага переключения isVisible
+ <button @click="isVisible=!isVisible">Toggle</button> -->
+
+	<h2 v-if = "type==='a'">A</h2>
+	<h2 v-else-if="type==='b'">B</h2>
+	<h2 v-else-if="type==='c'">C</h2>
+	<h2 v-else>not match</h2>
+
+	<hr>
+	<input type="text" v-model="type" />
+	<template v-if="isVisible">
+		<h2>I am title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, debitis?</p>
+	</template>
+	<template v-else>
+		<h2  style="color:red">I am title</h2>
+		<p style="color:blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, debitis?</p>
+	</template>
+
+
+</div>
+
+<script>
+	new Vue({
+		el: `#app`,
+		data:{
+			isVisible:true,
+			type: 'a'
+		},
+		computed:{
+		
+		},
+		methods:{
+
+		}
+	
+
+	})
+</script>
+</body>
+</html>

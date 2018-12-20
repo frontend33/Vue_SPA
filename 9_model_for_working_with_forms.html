@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<!-- Передача параметров в метод-->
+<div id="app">
+	<!-- <input type="text" name="" @input="inputValue=$event.target.value" :value="inputValue"> -->
+	<input type="text" v-model.lazy="inputValue">
+	<h2>{{inputValue}}</h2>
+</div>
+
+
+
+<script>
+	new Vue({
+		el: `#app`,
+		data:{
+		inputValue:"Initial Value"
+		},
+		methods:{
+		}
+	
+
+	})
+</script>
+</body>
+</html>
