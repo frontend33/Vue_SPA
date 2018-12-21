@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!-- Динамические стили-->
+	<div id="app">
+
+	<h2>Counter {{ counter }}  / {{counter2}}</h2>
+	<!-- <h3>Result: {{result()}}</h3> -->
+	<h3>Computed result: {{computedResult}}</h3>
+	<button @click="add">Add</button>
+	<button  @click="sub">Sub</button>
+	<button @click="counter2++">Add counter 2</button>
+
+	</div>
+
+<script>
+	new Vue({
+		el: `#app`,
+		data:{
+			counter: 0,
+			counter2: 0
+		},
+		methods:{
+			add: function(){
+				this.counter++
+			},
+			sub: function(){
+				this.counter--
+			},
+			// result: function(){
+			// 	console.log("Was called")
+			// 	return this.condition=this.counter>3 ? `Больше 3`: `Меньше 3`
+			// }
+		},
+		computed:{
+			computedResult: function(){
+				console.log("Was called for computed")
+				return this.condition=this.counter>3 ? `Больше 3`: `Меньше 3`
+			}
+		}
+	})
+
+</script>
+</body>
+</html>

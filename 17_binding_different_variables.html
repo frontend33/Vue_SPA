@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!-- Динамические стили-->
+	<div id="app">
+	<h2>{{title}}</h2>
+	<button @click="title='update title'">Update title</button>
+	</div>
+
+	<div id="app2">
+		<h2>{{title}}</h2>
+	<button @click="updateTitle">Update title2</button>
+	</div>
+
+<script>
+	const vue1= new Vue({
+		el: `#app`,
+		data:{
+			title:`Hello Vue`
+		},
+		methods:{
+			alertFast:function(){
+				alert("I am from Vue1")
+			}
+		}
+		
+	})
+	console.log(vue1)
+
+		new Vue({
+		el: `#app2`,
+		data:{
+			title:`Hello Vue2`
+		},
+		methods:{
+			updateTitle:function(){
+				vue1.title='Updated from second app'
+				setTimeout(function(){
+					vue1.alertFast()
+				},1000)
+
+			}
+		}
+		
+	})
+
+</script>
+</body>
+</html>

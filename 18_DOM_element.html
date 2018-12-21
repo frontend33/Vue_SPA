@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!-- Динамические стили-->
+	<div id="app">
+		<!-- Крутая замена querySelector -->
+	<h2 ref="heading">{{title}}</h2>
+	<button @click="updateFirstTitle">Update title</button>
+	<hr ref="horline">
+	</div>
+
+<script>
+	const vue1= new Vue({
+		el: `#app`,
+		data:{
+			title:`Hello Vue`
+		},
+		methods:{
+			updateFirstTitle:function(){
+				this.title='New title'
+				// Если хотим изменить цвет
+				this.$refs.heading.style.color='red'
+				// выводит объект в html
+				console.log(this.$refs.heading)
+				console.log(this.$refs.horline)
+				console.log(this.$refs)
+			}
+		}
+	})
+
+
+		
+
+</script>
+</body>
+</html>
