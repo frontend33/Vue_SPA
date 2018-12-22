@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
+<title>Фреймворк Vue JS. Полное руководство для современной веб-разработки</title>
+
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!-- Динамические стили-->
+	<div id="app">
+	</div>
+
+<script>
+	new Vue({
+		el: `#app`,
+		template:`<div><h2>{{title}}</h2>
+		<button @click="title='new Vue2'">Button</button>
+		<button @click="doDestroy">Destroy</button>
+		</div>`,
+		data:{
+			title:`Hello Vue 1 `
+		},
+		methods:{
+			doDestroy:function(){
+				this.$destroy()
+			}
+		},
+		
+		beforeCreate:function(){
+			console.log(`before Create`)
+		},
+		created:function(){
+			console.log(`created`)
+		},
+		beforeMount:function(){
+			console.log(`before mount`)
+		},
+		mounted: function(){
+			console.log(`mounted`)
+		},
+		beforeUpdate:function(){
+			console.log(`before Update`)
+		},
+		updated:function(){
+			console.log(`Update`)
+		},
+		beforeDestroy: function(){
+			console.log(`before destroyed`)
+		},
+		destroyed: function(){
+			console.log(`destroyed`)
+		}
+	
+	})
+
+
+		
+
+</script>
+</body>
+</html>
